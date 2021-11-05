@@ -1,5 +1,5 @@
 server:
-  port: 8089
+  port: 8090
   servlet:
     contextPath: /
   compression:
@@ -10,6 +10,15 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://101.34.130.93/:13306/sql50?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://101.34.130.93:13306/sql50?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 配置mybatis所有Mapper.xml所在的路径
+mybatis:
+  mapper-locations: classpath:/mapper/**/*.xml
+
+# 打印所有的sql日志：sql, 参数, 结果
+logging:
+  level:
+    com.andrew.mapper: trace
